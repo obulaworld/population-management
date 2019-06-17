@@ -6,7 +6,9 @@
 		"scripts": {
 				"test": "NODE_ENV=test nyc mocha src/__tests__ --recursive --require @babel/register --exit",
 				"start": "node ./src/index.js",
-				"server": "nodemon --exec babel-node ./src/index.js"
+        "server": "nodemon --exec babel-node ./src/index.js",
+        "db:migrate": "node_modules/.bin/sequelize db:migrate",
+        "db:rollback": "node_modules/.bin/sequelize db:migrate:undo:all"
 		},
 		"dependencies": {
 				"@babel/cli": "^7.4.3",
@@ -21,7 +23,8 @@
 				"pg": "^7.4.3",
 				"request": "^2.87.0",
 				"swagger-ui-express": "^3.0.10",
-				"yamljs": "^0.3.0"
+				"yamljs": "^0.3.0",
+				"sequelize": "^4.39.0"
 		},
 		"devDependencies": {
 				"@babel/node": "^7.2.2",
@@ -33,7 +36,8 @@
 				"eslint-plugin-import": "^2.17.2",
 				"mocha": "^6.1.4",
 				"nodemon": "^1.18.11",
-				"nyc": "^14.0.0"
+				"nyc": "^14.0.0",
+				"sequelize-cli": "^4.1.1"
 		},
 		"repository": {
 				"type": "git",

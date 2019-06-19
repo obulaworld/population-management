@@ -4,7 +4,7 @@
 		"description": "An application that contains a list of locations and the total number of residents in each location broken down by gender.",
 		"main": "index.js",
 		"scripts": {
-				"test": "NODE_ENV=test nyc mocha src/__tests__ --recursive --require @babel/register --exit",
+				"test": "npm run db:rollback && npm run db:migrate && NODE_ENV=test nyc mocha ./src/__tests__ --recursive --require @babel/register --exit",
 				"start": "node ./src/index.js",
         "server": "nodemon --exec babel-node ./src/index.js",
         "db:migrate": "node_modules/.bin/sequelize db:migrate",
